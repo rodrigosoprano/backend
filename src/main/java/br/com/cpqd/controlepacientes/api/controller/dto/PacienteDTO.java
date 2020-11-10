@@ -1,39 +1,24 @@
 package br.com.cpqd.controlepacientes.api.controller.dto;
 
-import java.util.Date;
-
 import org.springframework.data.domain.Page;
 
 import br.com.cpqd.controlepacientes.domain.model.Paciente;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter @Setter
 public class PacienteDTO {
 
 	private Long id;
 	private String nome;
-	private String cpf;
-	private Date dataNascimento;
+	private String email;
+	private String telefone;
 
 	public PacienteDTO(Paciente paciente) {
 		this.id = paciente.getId();
 		this.nome = paciente.getNome();
-		this.cpf = paciente.getCpf();
-		this.dataNascimento = paciente.getDataNascimento();
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public String getCpf() {
-		return cpf;
-	}
-
-	public Date getDataNascimento() {
-		return dataNascimento;
+		this.email = paciente.getEmail();
+		this.telefone = paciente.getTelefone();
 	}
 
 	public static Page<PacienteDTO> converter(Page<Paciente> pacientes) {
