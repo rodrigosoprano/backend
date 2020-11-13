@@ -4,9 +4,8 @@ import org.springframework.data.domain.Page;
 
 import br.com.cpqd.controlepacientes.domain.model.Paciente;
 import lombok.Getter;
-import lombok.Setter;
 
-@Getter @Setter
+@Getter
 public class PacienteDTO {
 
 	private Long id;
