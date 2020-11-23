@@ -1,8 +1,5 @@
 package br.com.cpqd.controlepacientes.api.exceptionhandler;
 
-import lombok.Getter;
-
-@Getter
 public class Exception {
 
 	private String message;
@@ -11,4 +8,9 @@ public class Exception {
 		this.message = message;
 	}
 
+	public String getMessage() {
+		return message;
+	}
+
+	
 }

@@ -3,9 +3,8 @@ package br.com.cpqd.controlepacientes.api.controller.dto;
 import org.springframework.data.domain.Page;
 
 import br.com.cpqd.controlepacientes.domain.model.Paciente;
-import lombok.Getter;
 
-@Getter
+
 public class PacienteDTO {
 
 	private Long id;
@@ -24,4 +23,21 @@ public class PacienteDTO {
 		return pacientes.map(PacienteDTO::new);
 	}
 
+	public Long getId() {
+		return id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	
 }

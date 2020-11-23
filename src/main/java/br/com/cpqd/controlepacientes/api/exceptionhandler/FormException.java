@@ -1,8 +1,5 @@
 package br.com.cpqd.controlepacientes.api.exceptionhandler;
 
-import lombok.Getter;
-
-@Getter
 public class FormException {
 
 	private String field;
@@ -13,4 +10,13 @@ public class FormException {
 		this.error = error;
 	}
 
+	public String getField() {
+		return field;
+	}
+
+	public String getError() {
+		return error;
+	}
+
+	
 }

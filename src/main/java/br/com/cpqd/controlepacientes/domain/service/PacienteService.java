@@ -46,10 +46,10 @@ public class PacienteService {
 		Paciente pacienteExistsByCpf = pacienteRepository.findByCpf(paciente.getCpf());
 		Paciente pacienteExistsByEmail = pacienteRepository.findByEmail(paciente.getEmail());
 
-		if (pacienteExistsByCpf != null && !pacienteExistsByCpf.equals(paciente))
+		if (pacienteExistsByCpf != null && !pacienteExistsByCpf.getId().equals(paciente.getId()))
 			throw new ServiceException("Já existe um paciente cadastrado com esse CPF");
 
-		if (pacienteExistsByEmail != null && !pacienteExistsByEmail.equals(paciente))
+		if (pacienteExistsByEmail != null && !pacienteExistsByEmail.getId().equals(paciente.getId()))
 			throw new ServiceException("Já existe um paciente cadastrado com esse EMAIL");
 
 		return new PacienteDTO(pacienteRepository.save(paciente));
